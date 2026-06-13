@@ -1,0 +1,8 @@
+{
+  "name": "bps-compliance",
+  "version": "0.1.0",
+  "description": "Building Performance Standards compliance — Local Law 97 NYC penalty calculator, BEPS ordinance tracking, compliance deadline alerts, and fine mitigation strategies across US/Canada/EU jurisdictions.",
+  "author": { "name": "Soapbox", "url": "https://soapbox.build" },
+  "homepage": "https://github.com/soapboxbuild/bps-compliance-skill",
+  "license": "Apache-2.0"
+}
