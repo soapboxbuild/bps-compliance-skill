@@ -5,6 +5,18 @@ description: Calculate Local Law 97 carbon penalties, track BEPS compliance dead
 
 # Building Performance Standards Compliance
 
+## Jurisdiction Routing — REQUIRED FIRST STEP
+
+Before any compliance calculation, identify the city:
+- **NYC → Local Law 97**: Carbon intensity limits by occupancy group. Fine = (actual_tCO2e − limit_tCO2e) × $268/tonne/year. Current period: 2024–2029. Electricity emissions factor: 0.000288962 tCO2e/kWh (2024–2029) — CHANGES in 2030 and 2035 per Local Law 22. Always flag multi-period projections. Limit = gross_floor_area_sf × occupancy_group_limit (kgCO2e/sf/yr from Appendix A).
+- **DC → BEPS**: EUI-based targets by property type (from DOEE benchmarking tool). Phase gates: 2026, 2030, 2036. Alternative Compliance Path available. Not a carbon intensity formula.
+- **Boston → BERDO**: GHG intensity trajectory targets by property type (e.g., office = 4.3 kgCO2/sf by 2030). ACP and REC purchase available. Penalty for non-reporting: $1,000/day.
+- **Chicago → TBE**: Thermal Energy Standards, 50,000 sf+ buildings. Benchmarking-first approach.
+- **Seattle → Carbon Neutral Buildings**: Fossil fuel elimination for new construction by 2031; existing buildings by fuel phase-out schedule.
+- **Toronto → BEPS**: Ontario Building Code integration; ENERGY STAR baseline check required.
+
+If the user's city is not on this list, say so and do not apply any formula.
+
 ## LL97 Carbon Penalty Calculation (NYC)
 
 ### Carbon Thresholds by Occupancy Group (2024-2029)
