@@ -147,3 +147,19 @@ Step 7: Compare NPV of each pathway vs. paying penalties for 5 years
 - UK: EPC A-G scale, MEES requires min E for commercial lettings
 - EU Taxonomy: NZEB standard or top 15% of national stock
 - France: DPE ratings affect rental value and transaction price
+
+## Report Output
+
+When the user asks to generate a report, export results, or produce a PDF, deck, or spreadsheet — dispatch the `report-renderer` subagent from the `soapbox-report` plugin:
+
+```json
+{
+  "template": "bps-compliance",
+  "org": "{org if known}",
+  "portfolio": "{portfolio if known}",
+  "asset": "{asset if known}",
+  "data": { "...structured output from this skill..." }
+}
+```
+
+The `report-renderer` handles branded pagination, interactive review in the artifact pane, and export to PDF/PPTX/XLSX. Do not produce final output as raw markdown when a formatted report is requested.
