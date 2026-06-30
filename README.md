@@ -1,6 +1,6 @@
 # BPS Compliance Skill
 
-A Claude Code skill for Building Performance Standards (BPS) compliance, covering Local Law 97 (NYC), BEPS ordinances across US/Canada/EU, carbon penalty calculations, and fine mitigation strategies.
+A Claude Code skill for Building Performance Standards (BPS) compliance, covering Local Law 97 (NYC), BEPS ordinances across US/Canada/EU, BERDO 2.0 (Boston), carbon penalty calculations, and fine mitigation strategies.
 
 ## Install
 
@@ -14,6 +14,11 @@ npx skills add soapboxbuild/bps-compliance-skill
 Calculate Local Law 97 carbon penalties and compliance gap for a NYC property. Identifies occupancy group, computes the threshold, calculates current penalty exposure, and projects 2030-2034 liability.
 
 **Usage:** `/ll97 123 Main St, 50,000 sf office, 450 tCO2e annual emissions`
+
+### `/berdo`
+Calculate BERDO 2.0 compliance for a Boston property. Converts energy data to GHG intensity, compares against the applicable BERDO limit for the compliance period, calculates annual penalty ($1,000/tCO2e over limit), and recommends compliance pathways.
+
+**Usage:** `/berdo 200 State St Boston, 80,000 sf office, 650,000 kgCO2e annual`
 
 ### `/beps`
 Check Building Energy Performance Standards compliance across multiple jurisdictions (NYC, DC, Denver, Boston, Chicago, Toronto, and more). Maps city ordinance to applicable standard and computes compliance gap.
@@ -30,6 +35,8 @@ Model carbon penalty scenarios and mitigation ROI. Compares pay-penalty vs. retr
 The `bps-compliance` skill is available for use in any conversation. It provides:
 
 - LL97 carbon thresholds by occupancy group (2024-2029 and 2030-2034 periods)
+- BERDO 2.0 GHG intensity limits by building type (2025–2050 compliance schedule)
+- BERDO emissions conversion factors and alternative compliance pathways
 - BEPS ordinance reference table for 8 major cities
 - Step-by-step compliance calculation workflow
 - EPC rating context for European properties
