@@ -1,18 +1,15 @@
 ---
-name: bps-analysis
+name: bps-compliance
 version: 1.1.0
 description: >
   Building Performance Standards (BPS) Analysis — identify every applicable building energy,
-  carbon, and emissions regulation for a property or portfolio by jurisdiction, calculate exact
+  carbon, and emissions regulation for a property or portfolio by jurisdiction, calculate
   current and projected penalty exposure, and produce a structured compliance report with
-  prioritized remediation pathways. Covers all major US cities (NYC, Boston, DC, Denver, Seattle,
-  LA, SF, San Jose, Chicago, St. Louis, Philadelphia), US states (WA, OR, CO, MD, MA, CA, RI),
-  Canadian cities (Toronto, Vancouver) and provinces (BC, Ontario, Quebec), UK (MEES, SECR),
-  and EU frameworks (EPBD, Taxonomy, CSRD/ESRS E1, ETS2, Germany GEG, Netherlands label mandate,
-  France Décret Tertiaire). Triggers on: "BPS compliance", "building performance standard",
-  "LL97", "BERDO", "BEPS", "Energize Denver", "MEES", "Décret Tertiaire", "carbon penalty",
-  "emissions fine", "building compliance exposure", "energy benchmarking penalty", "EPC",
-  "building decarbonization risk", "sustainability compliance cost", "carbon fine exposure",
+  prioritized remediation pathways. Covers major US cities/states, Canada, UK (MEES, SECR),
+  and EU frameworks (EPBD, CSRD/ESRS E1, ETS2). Triggers on: "BPS compliance", "building
+  performance standard", "LL97", "BERDO", "BEPS", "Energize Denver", "MEES", "Décret
+  Tertiaire", "carbon penalty", "emissions fine", "building compliance exposure", "energy
+  benchmarking penalty", "EPC", "building decarbonization risk", "carbon fine exposure",
   "BPS penalty", "benchmark compliance", "LL84", "LL87", "retro-commissioning deadline".
 ---
 
