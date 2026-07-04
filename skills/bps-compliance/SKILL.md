@@ -1,6 +1,6 @@
 ---
 name: bps-analysis
-version: 1.0.0
+version: 1.1.0
 description: >
   Building Performance Standards (BPS) Analysis — identify every applicable building energy,
   carbon, and emissions regulation for a property or portfolio by jurisdiction, calculate exact
@@ -76,6 +76,49 @@ For every property, identify ALL potentially applicable layers:
 | Germany | GEG 65% renewable heating | EU-level only | No EPC letter system |
 | Netherlands | Office label C (enforced 2023) | EU-level only | A by 2030 proposed |
 | EU broadly | EPBD 2024, EU Taxonomy, CSRD/ESRS E1, ETS2 | Member state transposition | EPBD transposed by May 2026 |
+
+---
+
+## Step 1.5 — Verify coverage at the jurisdiction's official source (DEFAULT — do not skip)
+
+Size/type thresholds (Step 2) only *predict* coverage. For any **specific property address**, the
+authoritative answer is the jurisdiction's own **benchmarking / covered-buildings registry**, which
+lists the actual covered buildings (often with the assigned ID, baseline, and targets). **Always
+check the official source before relying on threshold inference**, and tag every coverage
+conclusion as **`verified-at-source`** or **`threshold-inferred`** so downstream economics carry
+the confidence.
+
+**How to look it up — prefer data, fall back to the map:**
+1. **If the jurisdiction publishes a covered-buildings data export / open dataset**, fetch that
+   (most reliable). Many programs run on the open-source **SEED Platform**, which exposes a
+   downloadable covered-buildings list (in the portal: **Actions → download**).
+2. **Otherwise, go to the jurisdiction's specific map/portal via the Web Browser MCP** — plain
+   `web_fetch` can't render these JS map apps. Use `browser_navigate` to the portal, then
+   `browser_snapshot` / `browser_type` + `browser_click` to search the address and read the
+   covered-building record. (The Web Browser MCP is a default connector on the account; its tools
+   are the `browser_*` set — `browser_navigate`, `browser_snapshot`, `browser_click`,
+   `browser_type`, `browser_evaluate`.)
+3. If neither a dataset nor a portal exists for the jurisdiction, say so and fall back to
+   `threshold-inferred`, flagged `(verify)`.
+
+**Jurisdiction source registry** (extend as new jurisdictions are encountered — confirm the URL
+live before quoting it as authoritative):
+
+| Jurisdiction | Official source (map/portal · dataset) | Notes |
+|---|---|---|
+| **Colorado statewide BPS** (Reg 28 / HB21-1286) | **`co.beam-portal.org`** — "Covered Buildings List" + data download (SEED Platform) | Map: `/map/2/properties/#/`. Prefer the SEED data download. |
+| Denver — Energize Denver | Denver covered-buildings list (denvergov.org Energize Denver) `(verify URL)` | Both Denver + CO statewide apply; use more stringent. |
+| New York City | NYC Open Data — LL84/LL97 covered buildings & benchmarking datasets `(verify)` | DOB BEAM portal is the filing platform. |
+| Boston — BERDO | `data.boston.gov` BERDO reporting dataset `(verify)` | |
+| Washington DC — BEPS | DOEE benchmarking / covered-buildings data `(verify)` | |
+| Seattle — BEPS/Tune-Ups | Seattle OSE benchmarking data portal `(verify)` | |
+| Washington State — CBPS | WA Commerce covered-buildings list `(verify)` | |
+
+For any jurisdiction not in the table, search for the official "<jurisdiction> benchmarking covered
+buildings list / map" and navigate it with the Web Browser MCP; never invent a URL.
+
+**Record** the source check in the compliance output: portal/dataset used, whether the address was
+found, the covered-building ID/record if any, and the `verified-at-source | threshold-inferred` tag.
 
 ---
 
