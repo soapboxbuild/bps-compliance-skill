@@ -1,3 +1,25 @@
+> # DO NOT USE
+>
+> **Status: superseded.** This skill now lives in the Soapbox plugin
+> marketplace, which is the single distribution point for every Soapbox skill.
+>
+> **Use instead:** `soapbox-build/soapbox-marketplace` →
+> `plugins/soapbox-compliance/skills/bps-compliance`
+>
+> The marketplace version is a rewrite rather than a copy, and it is the larger
+> of the two: `SKILL.md` plus five references (metrics and penalties, compliance
+> pathways and exemptions, deadline calendar, jurisdiction notes, applicability
+> thresholds), 62.7 KB against 61.3 KB here. Verified before this repo was marked
+> deprecated.
+>
+> Nothing here is unique. Edit the marketplace copy.
+
+---
+
+## Historical README
+
+Kept for provenance. Everything below describes the deprecated implementation.
+
 # BPS Compliance Skill
 
 A Claude Code skill for Building Performance Standards (BPS) compliance, covering Local Law 97 (NYC), BEPS ordinances across US/Canada/EU, BERDO 2.0 (Boston), carbon penalty calculations, and fine mitigation strategies.
